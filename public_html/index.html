@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Omar Cardenas wiht a template of Dorang ">
+    <link rel="icon" href="/assets/imgs/icono.png">
+    <title>Rock Art Femme</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="/assets/css/style.css">
+    
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    
+    <!-- page navbar -->
+    <nav id="navbar"class="page-navbar " data-spy="affix" data-offset-top="10">
+        <div class="container px-4 px-lg-5">
+        
+        <ul class="nav-navbar container ">
+            
+            <li class="nav-item "><a href="#lettering" class="nav-link">Lettering</a></li>
+            <li class="nav-item "><a href="#captura" class="nav-link">Captura</a></li>
+            <li class="nav-item "><a href="https://www.youtube.com/watch?v=6IAb1lRaktA" target="_blank" class="nav-link"><img src="/assets/imgs/icon3.png" ></a></li>
+            <li class="nav-item "><a href="#fantasia" class="nav-link">Fantasía</a></li>
+            <li class="nav-item "><a href="#contact" class="nav-link">Contacto</a></li>
+            
+            <li class="nav-item search">
+
+            </li>
+
+        </ul>
+        </div>
+    </nav>
+    
+    <!-- page header -->
+    <header id="header" class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1 class="header-title">Rock-Art Femme</h1>
+            <p class="header-subtitle">Rock Art Femme es la versión más reciente del arte de Rock-Art.</p>
+            
+            <a  class="img-fluid" style="max-height: 271px">
+                
+            <button id="mostrar-imagenes" class="btn btn-theme-color">Proceso</button>
+        </div> 
+            
+        </a>
+        
+         
+    
+    </header><!-- end of page header -->
+
+    <style>
+        @media (max-width: 768px) {
+  #imagen1, #imagen2, #imagen3, #imagen4 {
+    width: 200px;
+    transform: none;
+    top: 15%;
+    left: 24%;
+
+  }
+}
+@media (max-width: 768px) {
+  #cerrar-imagenes{
+    bottom: 70% important;
+    left: -13% important;
+  }
+}
+    </style>
+    <div id="fondo-difuminado">
+            
+        <button id="flecha-izquierda">◀</button>
+        <button id="flecha-derecha">▶</button>
+        <button id="cerrar-imagenes">X</button>
+        <img id="imagen1" class="mover-al-scroll" src="/assets/imgs/pr1.jpeg" style="display:none">
+        <img id="imagen2" class="mover-al-scroll" src="/assets/imgs/pr2.jpeg" style="display:none">
+        <img id="imagen3" class="mover-al-scroll" src="/assets/imgs/pr3.jpeg" style="display:none">
+        <img id="imagen4" class="mover-al-scroll" src="/assets/imgs/pr4.jpeg" style="display:none">
+    </div> 
+    
+    <script>
+        var cerrarImagenes = document.getElementById("cerrar-imagenes");
+        var mostrarImagenes = document.getElementById("mostrar-imagenes");
+        var flechaIzquierda = document.getElementById("flecha-izquierda");
+        var flechaDerecha = document.getElementById("flecha-derecha");
+        var fondoDifuminado = document.getElementById("fondo-difuminado");
+    
+        var imagen1 = document.getElementById("imagen1");
+        var imagen2 = document.getElementById("imagen2");
+        var imagen3 = document.getElementById("imagen3");
+        var imagen4 = document.getElementById("imagen4");
+    
+        var imagenes = [imagen1, imagen2, imagen3, imagen4];
+        var indiceActual = 0;
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            flechaIzquierda.style.display = "none";
+            flechaDerecha.style.display = "none";
+            fondoDifuminado.style.display = "none";
+        });
+    
+        mostrarImagenes.addEventListener("click", function() {
+            imagenes[indiceActual].style.display = "block";
+    
+            document.getElementById("fondo-difuminado").style.display = "block";
+            cerrarImagenes.style.display = "block";
+            flechaIzquierda.style.display = "block";
+            flechaDerecha.style.display = "block";
+        });
+        cerrarImagenes.addEventListener("click", function() {
+        imagenes[indiceActual].style.display = "none";
+        document.getElementById("fondo-difuminado").style.display = "none";
+        flechaIzquierda.style.display = "none";
+        flechaDerecha.style.display = "none";
+        cerrarImagenes.style.display = "none";
+        indiceActual = 0;
+        });
+
+        flechaDerecha.addEventListener("click", function() {
+        imagenes[indiceActual].style.display = "none";
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        imagenes[indiceActual].style.display = "block";
+        });
+        flechaIzquierda.addEventListener("click", function() {
+        imagenes[indiceActual].style.display = "none";
+        indiceActual = (indiceActual - 1 + imagenes.length)% imagenes.length ;
+        imagenes[indiceActual].style.display = "block";
+        });
+    </script>  
+        
+    <!-- page container -->
+    <div id="lettering" class="container page-container">
+        <div class="col-md-10 col-lg-8 m-auto">
+            <h6 class="title mb-4">Lettering</h6>
+            <p class="mb-5">Arte en letras</p>
+        </div>  
+
+        <!-- row -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/le1.jpeg" alt="">  
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">AWESOME</h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="overlay-img">
+                    <img src="assets/imgs/le2.jpeg" alt="">  
+                    <div class="overlay"></div> 
+                    <div class="des">
+                        <h1 class="title">Dirty</h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div><!-- end of row -->
+
+        <div id="captura" class="container page-container">
+            <div class="col-md-10 col-lg-8 m-auto">
+                <h6 class="title mb-4">Captura</h6>
+                <p class="mb-5">La realidad no es más que una fusión de objetos.</p>
+            </div>  
+         <!-- row -->
+         <div class="row mb-4">
+            <div class="col-md-4">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/cap2.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="overlay-img">
+                    <img src="assets/imgs/cap3.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="overlay-img">
+                    <img src="assets/imgs/cap4.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div><!-- end of row -->
+
+        <button id="show-more-button1">Ver más <i class="ti-angle-double-right angle"></i></button>
+        <div class="row mb-4 ">
+            <div class="col-md-4 hidden-image">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/cap1.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/cap5.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/cap6.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div>
+        <style>
+        .hidden-image {
+            display:none;
+            padding-top: 20px;
+          }
+        </style>
+            <script>
+            var showMoreButton1 = document.getElementById('show-more-button1');
+            var hiddenImages1 = document.querySelectorAll('.hidden-image');
+            var clickCounter = 0;
+
+            // Asociamos un evento click al botón
+            showMoreButton1.addEventListener('click', function() {
+                clickCounter++;
+                // Recorremos los elementos ocultos
+                for (var i = 0; i < hiddenImages1.length; i++) {
+        // Si el contador es impar, mostramos los elementos
+                if (clickCounter % 2 !== 0) {
+            hiddenImages1[i].style.display = "block";
+            } else {
+            // Si el contador es par, ocultamos los elementos
+            hiddenImages1[i].style.display = "none";
+            }
+                }
+            });
+            </script>
+
+        <div id="fantasia" class="container page-container">
+            <div class="col-md-10 col-lg-8 m-auto">
+                <h6 class="title mb-4">Fantasía</h6>
+                <p class="mb-5">La fantasía es el espejo en el que la realidad se refleja para mostrarnos su verdadera esencia.</p>
+            </div>  
+        <!-- row -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/2.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="overlay-img">
+                    <img src="assets/imgs/3.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="overlay-img">
+                    <img src="assets/imgs/4.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div><!-- end of row -->
+
+        <button id="show-more-button">Ver más<i class="ti-angle-double-right angle"></i></button>
+        <div class="row mb-4 ">
+            <div class="col-md-4 hidden-image">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/5.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/6.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/7.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div>
+        <div class="row mb-4 ">
+            <div class="col-md-4 hidden-image">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/8.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/9.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/11.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div>
+        <div class="row mb-4 ">
+            <div class="col-md-4 hidden-image">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/14.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/15.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/16.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div>
+        <div class="row mb-4 ">
+            <div class="col-md-4 hidden-image">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/18.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/20.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/21.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div>
+        <div class="row mb-4 ">
+            <div class="col-md-4 hidden-image">
+                <a  class="overlay-img">
+                    <img src="assets/imgs/27.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/28.jpg" alt="">  
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+            <div class="col-md-4 hidden-image">
+                <a class="overlay-img">
+                    <img src="assets/imgs/30.jpg" alt="">  
+                    
+                    <div class="des">
+                        <h1 class="title"></h1>
+                        
+                    </div>          
+                </a>
+            </div>
+                    
+        </div>
+        <style>
+        .hidden-image {
+            display: none;
+            padding-top: 20px;
+        }
+        </style>
+        <script>
+        var showMoreButton = document.getElementById('show-more-button');
+        var hiddenImages = document.querySelectorAll('.hidden-image');
+        var clickCounter1 = 0;
+
+        // Asociamos un evento click al botón
+        showMoreButton.addEventListener('click', function() {
+            clickCounter1++;
+            // Recorremos los elementos ocultos
+            for (var i = 0; i < hiddenImages.length; i++) {
+        // Si el contador es impar, mostramos los elementos
+            if (clickCounter1 % 2 !== 0) {
+        hiddenImages[i].style.display = "block";
+        } else {
+        // Si el contador es par, ocultamos los elementos
+        hiddenImages[i].style.display = "none";
+        }
+            }
+        });
+        </script>
+
+    </div> <!-- end of page container -->
+
+    <!--footer & pre footer -->
+    <div id="contact" class="contact-section">
+        <div class="overlay"></div>
+        <!-- container -->
+        <div class="container">
+            <div class="col-md-10 col-lg-8 m-auto">
+                <h6 class="title mb-2">Contacto</h6>
+                <a href="https://www.instagram.com/and.femme/" target="_blank"><i class="fab fa-instagram"></i> Andrea Pinilla </i>
+                </a>
+                <p>Artista</p>
+                <a href="https://www.instagram.com/plural_innocence/" target="_blank"><i class="fab fa-instagram"></i> Omar Cárdenas </i>
+                </a>
+                <p>Developer</p>
+                
+            </div>
+
+            <!-- footer -->
+            <footer class="footer">
+                <p class="infos">&copy;ODCA DEV</p>       
+            </footer><!-- end of footer -->
+
+        </div><!-- end of container -->
+    </div><!-- end of pre footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Dorang js -->
+    <script src="assets/js/dorang.js"></script>
+
+</body>
+</html>
